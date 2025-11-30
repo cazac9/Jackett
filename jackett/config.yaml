@@ -5,19 +5,15 @@ description: An addon to add jackett to hassio
 url: https://github.com/cazac9/Jackett
 arch:
   - aarch64
-startup: application
-boot: auto
 webui: http://[HOST]:[PORT:8889]
 map:
 - config:rw
 - share:rw
 - ssl
 hassio_api: true
-hassio_role: default
 host_network: true
 auth_api: true
 apparmor: false
-ingress: false
 schema:
   black_hole: str
 ports:
