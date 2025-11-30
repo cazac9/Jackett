@@ -1,5 +1,5 @@
 name: Jackett
-version: 0.1.1
+version: 0.1
 slug: hassio_jackett
 description: An addon to add jackett to hassio
 url: https://github.com/cazac9/Jackett
