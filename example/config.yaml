@@ -1,20 +1,26 @@
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Example add-on
-version: "1.2.0"
-slug: example
-description: Example add-on
-url: "https://github.com/home-assistant/addons-example/tree/main/example"
+name: Jackett
+version: 0.1.1
+slug: hassio_jackett
+description: An addon to add jackett to hassio
+url: https://github.com/cazac9/Jackett
 arch:
-  - armhf
-  - armv7
   - aarch64
-  - amd64
-  - i386
-init: false
+startup: application
+boot: auto
+webui: http://[HOST]:[PORT:8889]
 map:
-  - share:rw
-options:
-  message: "Hello world..."
+- config:rw
+- share:rw
+- ssl
+hassio_api: true
+hassio_role: default
+host_network: true
+auth_api: true
+apparmor: false
+ingress: false
 schema:
-  message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+  black_hole: str
+ports:
+  8889/tcp: 8889
+ports_description:
+  8889/tcp: Port for the web interface
